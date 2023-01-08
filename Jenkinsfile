@@ -1,18 +1,8 @@
-pipeline {
-    agent any
-    tools {
-        nodejs '18.13.0'
+Node {
+    stage('Build') {
+        sh 'npm install'
     }
-    stages {
-        stage('Build') { 
-            steps {
-                sh 'npm install' 
-            }
-        }
-        stage('Test') {
-            steps {
-                sh './jenkins/scripts/test.sh'
-            }
-        }
+    stage('Test') {
+        sh './jenkins/scripts/test.sh'
     }
 }
