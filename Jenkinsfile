@@ -12,7 +12,7 @@ node {
     }
     stage('Deploy') {
         sh './jenkins/scripts/deliver.sh'
-        sleep 1m
+        sleep '1m'
         sh './jenkins/scripts/kill.sh'
     }
 }
