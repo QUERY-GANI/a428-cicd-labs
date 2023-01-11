@@ -1,6 +1,7 @@
 node {
     env.NODEJS_HOME = "${tool '18.13.0'}"
-    env.PATH="${env.NODEJS_HOME}/bin:${env.PATH}"
+    env.PATH = "${env.NODEJS_HOME}/bin:${env.PATH}"
+    env.NODE_TLS_REJECT_UNAUTHORIZED = 0
     stage('Build') {
         sh 'npm install'
     }
